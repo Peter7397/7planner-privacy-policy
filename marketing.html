@@ -54,6 +54,24 @@
             font-weight: bold;
             text-decoration: none;
             color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .brand-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            border-radius: 6px;
+        }
+        .brand-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .brand-text .brand-icon {
+            width: 28px;
+            height: 28px;
         }
         .nav-links {
             display: flex;
@@ -226,7 +244,10 @@
     <!-- 统一导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="https://7planner.qzz.io/marketing.html" class="nav-brand">全能助理</a>
+            <a href="https://7planner.qzz.io/marketing.html" class="nav-brand">
+                <img src="https://7planner.qzz.io/favicon.png" alt="全能助理" class="brand-icon">
+                全能助理
+            </a>
             <ul class="nav-links">
                 <li><a href="https://7planner.qzz.io/marketing.html" class="active">首页</a></li>
                 <li><a href="https://7planner.qzz.io/support.html">支持中心</a></li>
@@ -236,7 +257,10 @@
     </nav>
 
     <header>
-        <h1>全能助理</h1>
+        <h1 class="brand-text">
+            <img src="https://7planner.qzz.io/icons/Icon-192.png" alt="全能助理" class="brand-icon" style="width: 48px; height: 48px;">
+            全能助理
+        </h1>
         <p>使命 · 角色 · 目标 · 任务管理应用</p>
         <p class="subtitle">让生活更有序，让目标更清晰</p>
     </header>
@@ -273,7 +297,7 @@
             <h2>开始使用 全能助理</h2>
             <p>在 App Store 免费下载并开始规划您的生活</p>
             <div class="cta-buttons">
-                <a href="https://apps.apple.com/app/全能助理/id[APP_ID]" class="btn btn-appstore" target="_blank" rel="noopener noreferrer">
+                <a href="https://apps.apple.com/app/id6754278374" class="btn btn-appstore" target="_blank" rel="noopener noreferrer">
                     <span style="font-size: 24px; margin-right: 8px;">📱</span>
                     在 App Store 下载
                 </a>
@@ -287,7 +311,7 @@
 
     <!-- 统一页脚 -->
     <footer>
-        <p>&copy; 2025 全能助理. All rights reserved.</p>
+        <p>&copy; 2025 <span class="brand-text"><img src="https://7planner.qzz.io/favicon.png" alt="全能助理" class="brand-icon" style="width: 20px; height: 20px;">全能助理</span>. All rights reserved.</p>
         <div style="margin-top: 20px;">
             <a href="https://7planner.qzz.io/marketing.html">官方网站</a>
             <a href="https://7planner.qzz.io/index.html">隐私政策</a>

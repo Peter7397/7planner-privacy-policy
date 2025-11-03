@@ -166,6 +166,21 @@
             color: #6750A4;
             font-weight: 500;
         }
+        .brand-icon {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            border-radius: 6px;
+        }
+        .brand-text {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .brand-text .brand-icon {
+            width: 28px;
+            height: 28px;
+        }
         /* 统一页脚 */
         footer {
             background: #333;
@@ -210,7 +225,10 @@
     <!-- 统一导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="https://7planner.qzz.io/marketing.html" class="nav-brand">全能助理</a>
+            <a href="https://7planner.qzz.io/marketing.html" class="nav-brand">
+                <img src="https://7planner.qzz.io/favicon.png" alt="全能助理" class="brand-icon">
+                全能助理
+            </a>
             <ul class="nav-links">
                 <li><a href="https://7planner.qzz.io/marketing.html">首页</a></li>
                 <li><a href="https://7planner.qzz.io/support.html" class="active">支持中心</a></li>
@@ -221,9 +239,12 @@
 
     <!-- 主要内容 -->
     <div class="container">
-        <h1>全能助理 支持中心</h1>
+        <h1 class="brand-text">
+            <img src="https://7planner.qzz.io/icons/Icon-192.png" alt="全能助理" class="brand-icon" style="width: 40px; height: 40px;">
+            全能助理 支持中心
+        </h1>
         
-        <p><strong>欢迎使用全能助理！</strong> 我们致力于为您提供最佳的任务管理和生活规划体验。</p>
+        <p><strong>欢迎使用<span class="brand-text"><img src="https://7planner.qzz.io/favicon.png" alt="全能助理" class="brand-icon" style="width: 20px; height: 20px;">全能助理</span>！</strong> 我们致力于为您提供最佳的任务管理和生活规划体验。</p>
 
         <div class="highlight">
             <strong>快速帮助：</strong> 如果您在使用过程中遇到任何问题，请查看下面的常见问题解答或直接联系我们。
@@ -302,7 +323,7 @@
 
         <h3>数据同步问题</h3>
         <ul>
-            <li>全能助理是离线应用，无需网络同步</li>
+            <li><span class="brand-text"><img src="https://7planner.qzz.io/favicon.png" alt="全能助理" class="brand-icon" style="width: 18px; height: 18px;">全能助理</span>是离线应用，无需网络同步</li>
             <li>数据存储在设备本地</li>
             <li>可通过导出功能备份数据</li>
         </ul>
@@ -311,7 +332,7 @@
         <div class="contact">
             <p><strong>全能助理已在 App Store 免费上线！</strong></p>
             <p style="margin-top: 15px;">
-                <a href="https://apps.apple.com/app/全能助理/id[APP_ID]" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 12px 24px; background: #007AFF; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 10px;">
+                <a href="https://apps.apple.com/app/id6754278374" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 12px 24px; background: #007AFF; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 10px;">
                     📱 在 App Store 下载
                 </a>
             </p>
@@ -362,7 +383,7 @@
         
         <div class="footer-nav">
             <p><em>最后更新：2025年11月2日</em></p>
-            <p><em>全能助理 支持中心 - 让生活更有序</em></p>
+            <p><em><span class="brand-text"><img src="https://7planner.qzz.io/favicon.png" alt="全能助理" class="brand-icon" style="width: 18px; height: 18px;">全能助理</span> 支持中心 - 让生活更有序</em></p>
             <p style="margin-top: 15px;">
                 <a href="https://7planner.qzz.io/marketing.html">返回首页</a> | 
                 <a href="https://7planner.qzz.io/index.html">隐私政策</a>
@@ -372,7 +393,7 @@
 
     <!-- 统一页脚 -->
     <footer>
-        <p>&copy; 2025 全能助理. All rights reserved.</p>
+        <p>&copy; 2025 <span class="brand-text"><img src="https://7planner.qzz.io/favicon.png" alt="全能助理" class="brand-icon" style="width: 20px; height: 20px;">全能助理</span>. All rights reserved.</p>
         <div style="margin-top: 20px;">
             <a href="https://7planner.qzz.io/marketing.html">官方网站</a>
             <a href="https://7planner.qzz.io/index.html">隐私政策</a>
