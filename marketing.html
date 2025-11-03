@@ -164,6 +164,17 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(103, 80, 164, 0.3);
         }
+        .btn-appstore {
+            background: linear-gradient(135deg, #007AFF 0%, #0051D5 100%);
+            font-size: 18px;
+            padding: 18px 35px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-appstore:hover {
+            background: linear-gradient(135deg, #0051D5 0%, #003A9B 100%);
+        }
         /* 统一页脚 */
         footer {
             background: #333;
@@ -260,8 +271,14 @@
 
         <section class="cta">
             <h2>开始使用 全能助理</h2>
-            <p>在 App Store 下载并开始规划您的生活</p>
+            <p>在 App Store 免费下载并开始规划您的生活</p>
             <div class="cta-buttons">
+                <a href="https://apps.apple.com/app/全能助理/id[APP_ID]" class="btn btn-appstore" target="_blank" rel="noopener noreferrer">
+                    <span style="font-size: 24px; margin-right: 8px;">📱</span>
+                    在 App Store 下载
+                </a>
+            </div>
+            <div class="cta-buttons" style="margin-top: 20px;">
                 <a href="https://7planner.qzz.io/support.html" class="btn">获取支持</a>
                 <a href="https://7planner.qzz.io/index.html" class="btn">隐私政策</a>
             </div>
