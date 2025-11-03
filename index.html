@@ -5,157 +5,353 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全能助理 隐私政策</title>
     <link rel="canonical" href="https://7planner.qzz.io/index.html">
+    <meta name="description" content="全能助理隐私政策 - 完全离线的任务管理应用，您的数据安全保存在本地设备。">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
             line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
             color: #333;
+            background: #f5f5f5;
         }
-        h1 { color: #2c3e50; }
-        h2 { color: #34495e; margin-top: 30px; }
-        h3 { color: #7f8c8d; }
-        .highlight { background-color: #f8f9fa; padding: 15px; border-left: 4px solid #007bff; margin: 20px 0; }
-        .contact { background-color: #e8f5e8; padding: 15px; border-radius: 5px; margin: 20px 0; }
-        a { color: #6750A4; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .nav { background: #f5f5f5; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
-        .nav a { margin-right: 15px; }
+        /* 统一导航栏 */
+        .navbar {
+            background: linear-gradient(135deg, #6750A4 0%, #7C4DFF 100%);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-weight: 500;
+        }
+        .nav-links a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        .nav-links a.active {
+            border-bottom: 2px solid white;
+            padding-bottom: 2px;
+        }
+        /* 主要内容区域 */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        h1 {
+            color: #6750A4;
+            margin-bottom: 20px;
+            font-size: 32px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 24px;
+            border-bottom: 2px solid #6750A4;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #7f8c8d;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .meta-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #6750A4;
+        }
+        .highlight {
+            background-color: #e8f5e8;
+            padding: 20px;
+            border-left: 4px solid #6750A4;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        .contact {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #6750A4;
+        }
+        .contact ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .contact a {
+            color: #6750A4;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        a {
+            color: #6750A4;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            margin: 15px 0;
+            padding-left: 30px;
+        }
+        ul li {
+            margin: 8px 0;
+        }
+        p {
+            margin: 15px 0;
+        }
+        hr {
+            margin: 40px 0;
+            border: none;
+            border-top: 1px solid #e0e0e0;
+        }
+        .footer-nav {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .footer-nav a {
+            margin: 0 15px;
+            color: #6750A4;
+            font-weight: 500;
+        }
+        /* 统一页脚 */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        footer a {
+            color: #7C4DFF;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <a href="https://7planner.qzz.io">首页</a>
-        <a href="https://7planner.qzz.io/support.html">支持中心</a>
-        <a href="https://7planner.qzz.io/index.html">隐私政策</a>
-    </div>
+    <!-- 统一导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="https://7planner.qzz.io/marketing.html" class="nav-brand">全能助理</a>
+            <ul class="nav-links">
+                <li><a href="https://7planner.qzz.io/marketing.html">首页</a></li>
+                <li><a href="https://7planner.qzz.io/support.html">支持中心</a></li>
+                <li><a href="https://7planner.qzz.io/index.html" class="active">隐私政策</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <h1>全能助理 隐私政策</h1>
-    
-    <p><strong>生效日期：</strong> 2025年10月11日<br>
-    <strong>最后更新：</strong> 2025年11月2日</p>
+    <!-- 主要内容 -->
+    <div class="container">
+        <h1>全能助理 隐私政策</h1>
+        
+        <div class="meta-info">
+            <p><strong>生效日期：</strong> 2025年10月11日<br>
+            <strong>最后更新：</strong> 2025年11月2日<br>
+            <strong>应用版本：</strong> 1.0.1+6</p>
+        </div>
 
-    <div class="highlight">
-        <strong>重要提示：</strong> 全能助理 是一款完全离线的任务管理应用。我们不会收集、存储或传输您的任何个人数据到我们的服务器。
-    </div>
+        <div class="highlight">
+            <strong>重要提示：</strong> 全能助理 是一款完全离线的任务管理应用。我们不会收集、存储或传输您的任何个人数据到我们的服务器。
+        </div>
 
-    <h2>1. 信息收集</h2>
-    <h3>1.1 我们收集的信息</h3>
-    <p>全能助理 在您的设备本地存储以下信息：</p>
-    <ul>
-        <li><strong>任务数据：</strong> 您创建的任务、提醒、角色管理信息</li>
-        <li><strong>用户偏好：</strong> 应用设置、通知偏好、主题选择</li>
-        <li><strong>设备信息：</strong> 设备型号、操作系统版本（仅用于应用功能优化）</li>
-        <li><strong>账户信息：</strong> 邮箱或用户名（用于登录验证，仅在本地存储）</li>
-    </ul>
-
-    <h3>1.2 我们不收集的信息</h3>
-    <p>我们不会收集：</p>
-    <ul>
-        <li>个人身份信息（姓名、邮箱、电话号码等）到外部服务器</li>
-        <li>位置信息</li>
-        <li>网络活动数据</li>
-        <li>任何敏感个人信息到服务器</li>
-    </ul>
-
-    <h2>2. 数据存储</h2>
-    <h3>2.1 本地存储</h3>
-    <p>所有数据都存储在您的设备本地：</p>
-    <ul>
-        <li>使用 Hive 数据库进行本地数据存储</li>
-        <li>数据完全在您的设备上，不会上传到任何服务器</li>
-        <li>您可以随时通过应用内的数据管理功能导出或删除数据</li>
-    </ul>
-
-    <h3>2.2 数据安全</h3>
-    <p>我们采用以下措施保护您的数据：</p>
-    <ul>
-        <li>本地加密存储</li>
-        <li>生物识别认证（Face ID/Touch ID）</li>
-        <li>Apple Sign-In 安全登录</li>
-        <li>密码哈希加密存储</li>
-    </ul>
-
-    <h2>3. 数据使用</h2>
-    <h3>3.1 使用目的</h3>
-    <p>我们使用收集的数据仅用于：</p>
-    <ul>
-        <li>提供任务管理功能</li>
-        <li>发送本地通知提醒</li>
-        <li>改善应用性能和用户体验</li>
-        <li>提供多用户支持</li>
-    </ul>
-
-    <h3>3.2 数据共享</h3>
-    <p>我们不会与第三方共享您的数据：</p>
-    <ul>
-        <li>不会向第三方出售、交易或转让数据</li>
-        <li>不会与广告商共享数据</li>
-        <li>不会与数据分析公司共享数据</li>
-    </ul>
-
-    <h2>4. 第三方服务</h2>
-    <h3>4.1 Apple 服务</h3>
-    <p>全能助理 使用以下 Apple 服务：</p>
-    <ul>
-        <li><strong>Apple Sign-In：</strong> 用于安全的用户身份验证</li>
-        <li><strong>本地通知：</strong> 用于发送任务提醒</li>
-        <li><strong>生物识别认证：</strong> 用于应用安全访问</li>
-    </ul>
-
-    <h3>4.2 权限使用</h3>
-    <p>应用可能请求以下权限：</p>
-    <ul>
-        <li><strong>通知权限：</strong> 用于发送任务提醒</li>
-        <li><strong>相机权限：</strong> 用于头像拍照（可选）</li>
-        <li><strong>相册权限：</strong> 用于头像选择（可选）</li>
-    </ul>
-
-    <h2>5. 数据控制</h2>
-    <h3>5.1 您的权利</h3>
-    <p>您拥有以下权利：</p>
-    <ul>
-        <li>查看和编辑您的数据</li>
-        <li>导出您的数据</li>
-        <li>删除您的数据</li>
-        <li>管理通知设置</li>
-    </ul>
-
-    <h3>5.2 数据删除</h3>
-    <p>您可以通过以下方式删除数据：</p>
-    <ul>
-        <li>在应用内删除特定任务或数据</li>
-        <li>重置应用数据</li>
-        <li>卸载应用（将删除所有本地数据）</li>
-    </ul>
-
-    <h2>6. 儿童隐私</h2>
-    <p>全能助理 适合所有年龄段的用户使用。我们不会故意收集 13 岁以下儿童的个人信息。如果您是家长或监护人，发现您的孩子向我们提供了个人信息，请联系我们。</p>
-
-    <h2>7. 隐私政策变更</h2>
-    <p>我们可能会不时更新此隐私政策。任何变更都会在此页面上发布，并更新"最后更新"日期。我们建议您定期查看此隐私政策以了解任何变更。</p>
-
-    <h2>8. 联系我们</h2>
-    <div class="contact">
-        <p>如果您对此隐私政策有任何疑问或建议，请通过以下方式联系我们：</p>
+        <h2>1. 信息收集</h2>
+        <h3>1.1 我们收集的信息</h3>
+        <p>全能助理 在您的设备本地存储以下信息：</p>
         <ul>
-            <li><strong>官方网站：</strong> <a href="https://7planner.qzz.io" target="_blank">https://7planner.qzz.io</a></li>
-            <li><strong>支持页面：</strong> <a href="https://7planner.qzz.io/support.html" target="_blank">https://7planner.qzz.io/support.html</a></li>
-            <li><strong>邮箱：</strong> <a href="mailto:admin@7planner.qzz.io">admin@7planner.qzz.io</a></li>
-            <li><strong>应用内反馈：</strong> 在应用设置中提交反馈</li>
+            <li><strong>任务数据：</strong> 您创建的任务、提醒、角色管理信息</li>
+            <li><strong>用户偏好：</strong> 应用设置、通知偏好、主题选择</li>
+            <li><strong>设备信息：</strong> 设备型号、操作系统版本（仅用于应用功能优化）</li>
+            <li><strong>账户信息：</strong> 邮箱或用户名（用于登录验证，仅在本地存储）</li>
         </ul>
+
+        <h3>1.2 我们不收集的信息</h3>
+        <p>我们不会收集：</p>
+        <ul>
+            <li>个人身份信息（姓名、邮箱、电话号码等）到外部服务器</li>
+            <li>位置信息</li>
+            <li>网络活动数据</li>
+            <li>任何敏感个人信息到服务器</li>
+        </ul>
+
+        <h2>2. 数据存储</h2>
+        <h3>2.1 本地存储</h3>
+        <p>所有数据都存储在您的设备本地：</p>
+        <ul>
+            <li>使用 Hive 数据库进行本地数据存储</li>
+            <li>数据完全在您的设备上，不会上传到任何服务器</li>
+            <li>您可以随时通过应用内的数据管理功能导出或删除数据</li>
+        </ul>
+
+        <h3>2.2 数据安全</h3>
+        <p>我们采用以下措施保护您的数据：</p>
+        <ul>
+            <li>本地加密存储</li>
+            <li>生物识别认证（Face ID/Touch ID）</li>
+            <li>Apple Sign-In 安全登录</li>
+            <li>密码哈希加密存储</li>
+        </ul>
+
+        <h2>3. 数据使用</h2>
+        <h3>3.1 使用目的</h3>
+        <p>我们使用收集的数据仅用于：</p>
+        <ul>
+            <li>提供任务管理功能</li>
+            <li>发送本地通知提醒</li>
+            <li>改善应用性能和用户体验</li>
+            <li>提供多用户支持</li>
+        </ul>
+
+        <h3>3.2 数据共享</h3>
+        <p>我们不会与第三方共享您的数据：</p>
+        <ul>
+            <li>不会向第三方出售、交易或转让数据</li>
+            <li>不会与广告商共享数据</li>
+            <li>不会与数据分析公司共享数据</li>
+        </ul>
+
+        <h2>4. 第三方服务</h2>
+        <h3>4.1 Apple 服务</h3>
+        <p>全能助理 使用以下 Apple 服务：</p>
+        <ul>
+            <li><strong>Apple Sign-In：</strong> 用于安全的用户身份验证</li>
+            <li><strong>本地通知：</strong> 用于发送任务提醒</li>
+            <li><strong>生物识别认证：</strong> 用于应用安全访问</li>
+        </ul>
+
+        <h3>4.2 权限使用</h3>
+        <p>应用可能请求以下权限：</p>
+        <ul>
+            <li><strong>通知权限：</strong> 用于发送任务提醒</li>
+            <li><strong>相机权限：</strong> 用于头像拍照（可选）</li>
+            <li><strong>相册权限：</strong> 用于头像选择（可选）</li>
+        </ul>
+
+        <h2>5. 数据控制</h2>
+        <h3>5.1 您的权利</h3>
+        <p>您拥有以下权利：</p>
+        <ul>
+            <li>查看和编辑您的数据</li>
+            <li>导出您的数据</li>
+            <li>删除您的数据</li>
+            <li>管理通知设置</li>
+        </ul>
+
+        <h3>5.2 数据删除</h3>
+        <p>您可以通过以下方式删除数据：</p>
+        <ul>
+            <li>在应用内删除特定任务或数据</li>
+            <li>重置应用数据</li>
+            <li>卸载应用（将删除所有本地数据）</li>
+        </ul>
+
+        <h2>6. 儿童隐私</h2>
+        <p>全能助理 适合所有年龄段的用户使用。我们不会故意收集 13 岁以下儿童的个人信息。如果您是家长或监护人，发现您的孩子向我们提供了个人信息，请联系我们。</p>
+
+        <h2>7. 隐私政策变更</h2>
+        <p>我们可能会不时更新此隐私政策。任何变更都会在此页面上发布，并更新"最后更新"日期。我们建议您定期查看此隐私政策以了解任何变更。</p>
+
+        <h2>8. 联系我们</h2>
+        <div class="contact">
+            <p>如果您对此隐私政策有任何疑问或建议，请通过以下方式联系我们：</p>
+            <ul>
+                <li><strong>官方网站：</strong> <a href="https://7planner.qzz.io/marketing.html" target="_blank">https://7planner.qzz.io</a></li>
+                <li><strong>支持页面：</strong> <a href="https://7planner.qzz.io/support.html" target="_blank">https://7planner.qzz.io/support.html</a></li>
+                <li><strong>邮箱：</strong> <a href="mailto:admin@7planner.qzz.io">admin@7planner.qzz.io</a></li>
+                <li><strong>应用内反馈：</strong> 在应用设置中提交反馈</li>
+            </ul>
+        </div>
+
+        <h2>9. 法律声明</h2>
+        <p>此隐私政策受中华人民共和国法律管辖。如果您不同意此隐私政策的任何条款，请不要使用我们的应用。</p>
+
+        <hr>
+        
+        <div class="footer-nav">
+            <p><em>本隐私政策最后更新于 2025年11月2日</em></p>
+            <p style="margin-top: 15px;">
+                <a href="https://7planner.qzz.io/marketing.html">返回首页</a> | 
+                <a href="https://7planner.qzz.io/support.html">支持中心</a>
+            </p>
+        </div>
     </div>
 
-    <h2>9. 法律声明</h2>
-    <p>此隐私政策受中华人民共和国法律管辖。如果您不同意此隐私政策的任何条款，请不要使用我们的应用。</p>
-
-    <hr>
-    <p><em>本隐私政策最后更新于 2025年11月2日</em></p>
-    <p style="margin-top: 20px; text-align: center;">
-        <a href="https://7planner.qzz.io">返回首页</a> | 
-        <a href="https://7planner.qzz.io/support.html">支持中心</a>
-    </p>
+    <!-- 统一页脚 -->
+    <footer>
+        <p>&copy; 2025 全能助理. All rights reserved.</p>
+        <div style="margin-top: 20px;">
+            <a href="https://7planner.qzz.io/marketing.html">官方网站</a>
+            <a href="https://7planner.qzz.io/index.html">隐私政策</a>
+            <a href="https://7planner.qzz.io/support.html">支持中心</a>
+            <a href="mailto:admin@7planner.qzz.io">联系我们</a>
+        </div>
+    </footer>
 </body>
 </html>
