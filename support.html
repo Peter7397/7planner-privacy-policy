@@ -13,6 +13,7 @@
     <link rel="apple-touch-icon" sizes="512x512" href="https://7planner.qzz.io/icons/Icon-512.png">
     <link rel="icon" type="image/png" sizes="192x192" href="https://7planner.qzz.io/icons/Icon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="https://7planner.qzz.io/icons/Icon-512.png">
+    <script src="https://7planner.qzz.io/lang-switcher.js"></script>
     <style>
         * {
             margin: 0;
@@ -67,6 +68,20 @@
         .nav-links a.active {
             border-bottom: 2px solid white;
             padding-bottom: 2px;
+        }
+        .lang-switcher-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        .lang-switcher-btn:hover {
+            background: rgba(255,255,255,0.3);
         }
         /* 主要内容区域 */
         .container {
@@ -226,55 +241,58 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="https://7planner.qzz.io/marketing.html" class="nav-brand">
-                <img src="https://7planner.qzz.io/favicon.png" alt="全能助理" class="brand-icon">
-                全能助理
+                <img src="https://7planner.qzz.io/favicon.png" alt="7Planner" class="brand-icon">
+                <span data-i18n="nav-brand">全能助理</span>
             </a>
             <ul class="nav-links">
-                <li><a href="https://7planner.qzz.io/marketing.html">首页</a></li>
-                <li><a href="https://7planner.qzz.io/support.html" class="active">支持中心</a></li>
-                <li><a href="https://7planner.qzz.io/index.html">隐私政策</a></li>
+                <li><a href="https://7planner.qzz.io/marketing.html" data-i18n="nav-home">首页</a></li>
+                <li><a href="https://7planner.qzz.io/support.html" class="active" data-i18n="nav-support">支持中心</a></li>
+                <li><a href="https://7planner.qzz.io/index.html" data-i18n="nav-privacy">隐私政策</a></li>
+                <li><button class="lang-switcher-btn" onclick="window.langSwitcher.toggleLanguage()">
+                    <span id="current-lang">中文</span>
+                </button></li>
             </ul>
         </div>
     </nav>
 
     <!-- 主要内容 -->
     <div class="container">
-        <h1 class="brand-text">
-            <img src="https://7planner.qzz.io/icons/Icon-192.png" alt="全能助理" class="brand-icon" style="width: 40px; height: 40px;">
-            全能助理 支持中心
+        <h1 class="brand-text" data-i18n-title="support-title">
+            <img src="https://7planner.qzz.io/icons/Icon-192.png" alt="7Planner" class="brand-icon" style="width: 40px; height: 40px;">
+            <span data-i18n="support-title">全能助理 支持中心</span>
         </h1>
         
-        <p><strong>欢迎使用<span class="brand-text"><img src="https://7planner.qzz.io/favicon.png" alt="全能助理" class="brand-icon" style="width: 20px; height: 20px;">全能助理</span>！</strong> 我们致力于为您提供最佳的任务管理和生活规划体验。</p>
+        <p><strong data-i18n="support-welcome">欢迎使用</strong><span class="brand-text"><img src="https://7planner.qzz.io/favicon.png" alt="7Planner" class="brand-icon" style="width: 20px; height: 20px;">7Planner</span>！我们致力于为您提供最佳的任务管理和生活规划体验。</p>
 
         <div class="highlight">
-            <strong>快速帮助：</strong> 如果您在使用过程中遇到任何问题，请查看下面的常见问题解答或直接联系我们。
+            <strong data-i18n="support-quick-help">快速帮助：</strong> <span data-i18n="support-quick-help-desc">如果您在使用过程中遇到任何问题，请查看下面的常见问题解答或直接联系我们。</span>
         </div>
 
-        <h2>📱 常见问题解答</h2>
+        <h2 data-i18n="support-faq">📱 常见问题解答</h2>
 
         <div class="faq">
-            <h3>Q: 如何创建新任务？</h3>
-            <p>A: 点击主界面的"+"按钮，选择任务类型，填写任务详情，设置提醒时间即可。</p>
-        </div>
-
-        <div class="faq">
-            <h3>Q: 如何设置生活角色？</h3>
-            <p>A: 进入"角色管理"页面，点击"添加角色"，选择角色类型并自定义名称。</p>
+            <h3 data-i18n="support-faq1-q">Q: 如何创建新任务？</h3>
+            <p data-i18n="support-faq1-a">A: 点击主界面的"+"按钮，选择任务类型，填写任务详情，设置提醒时间即可。</p>
         </div>
 
         <div class="faq">
-            <h3>Q: 如何开启通知提醒？</h3>
-            <p>A: 进入"设置" → "通知设置"，开启相应的提醒类型并设置提醒时间。</p>
+            <h3 data-i18n="support-faq2-q">Q: 如何设置生活角色？</h3>
+            <p data-i18n="support-faq2-a">A: 进入"角色管理"页面，点击"添加角色"，选择角色类型并自定义名称。</p>
         </div>
 
         <div class="faq">
-            <h3>Q: 如何切换用户？</h3>
-            <p>A: 双击应用图标或进入"个人中心" → "用户管理"进行用户切换。</p>
+            <h3 data-i18n="support-faq3-q">Q: 如何开启通知提醒？</h3>
+            <p data-i18n="support-faq3-a">A: 进入"设置" → "通知设置"，开启相应的提醒类型并设置提醒时间。</p>
         </div>
 
         <div class="faq">
-            <h3>Q: 数据会丢失吗？</h3>
-            <p>A: 不会。所有数据都安全存储在您的设备本地，不会上传到任何服务器。</p>
+            <h3 data-i18n="support-faq4-q">Q: 如何切换用户？</h3>
+            <p data-i18n="support-faq4-a">A: 双击应用图标或进入"个人中心" → "用户管理"进行用户切换。</p>
+        </div>
+
+        <div class="faq">
+            <h3 data-i18n="support-faq5-q">Q: 数据会丢失吗？</h3>
+            <p data-i18n="support-faq5-a">A: 不会。所有数据都安全存储在您的设备本地，不会上传到任何服务器。</p>
         </div>
 
         <h2>🔧 功能指南</h2>
@@ -360,7 +378,19 @@
         </ul>
 
         <h2>🔄 更新日志</h2>
-        <h3>版本 1.0.1+6 (2025年11月)</h3>
+        <h3>版本 1.0.5+12 - 国际发布版 (2025年1月26日) 🌍</h3>
+        <ul>
+            <li><strong>国际发布：</strong> 全面支持全球分发，包括中国和所有其他国家</li>
+            <li><strong>双语支持：</strong> 完整的中文（简体）和英语本地化</li>
+            <li><strong>App Store Connect 就绪：</strong> 所有元数据和资源已准备好用于国际 App Store 提交</li>
+            <li><strong>多地区合规：</strong> 应用已配置为全球分发，具有适当的本地化</li>
+            <li><strong>文档更新：</strong> 全面的项目审查和文档更新</li>
+            <li><strong>本地化优化：</strong> 修复了日期格式显示问题（如"Nov 2025"替代"2025 Year 11 Month"）</li>
+            <li><strong>性能优化：</strong> 修复了代码警告，提升了应用性能和代码质量</li>
+            <li><strong>用户体验：</strong> 优化了周计划页面，添加了"今天"按钮和更好的日期格式化</li>
+        </ul>
+
+        <h3>版本 1.0.4+10 (2025年1月25日)</h3>
         <ul>
             <li>邮箱/用户名登录支持</li>
             <li>月度日历视图优化（iPad/iPhone自适应显示）</li>
@@ -369,7 +399,7 @@
             <li>用户界面改进</li>
         </ul>
 
-        <h3>版本 1.0.0 (2025年10月)</h3>
+        <h3>版本 1.0.0 (2025年1月8日)</h3>
         <ul>
             <li>初始版本发布</li>
             <li>基础任务管理功能</li>
@@ -382,23 +412,23 @@
         <hr>
         
         <div class="footer-nav">
-            <p><em>最后更新：2025年11月2日</em></p>
-            <p><em><span class="brand-text"><img src="https://7planner.qzz.io/favicon.png" alt="全能助理" class="brand-icon" style="width: 18px; height: 18px;">全能助理</span> 支持中心 - 让生活更有序</em></p>
+            <p><em><span data-i18n="support-footer-updated">最后更新：</span>2025年1月26日 | 版本 1.0.5+12 国际发布版 🌍</em></p>
+            <p><em><span class="brand-text"><img src="https://7planner.qzz.io/favicon.png" alt="7Planner" class="brand-icon" style="width: 18px; height: 18px;">7Planner</span> <span data-i18n="support-footer-tagline">支持中心 - 让生活更有序 | 现已支持全球发布</span></em></p>
             <p style="margin-top: 15px;">
-                <a href="https://7planner.qzz.io/marketing.html">返回首页</a> | 
-                <a href="https://7planner.qzz.io/index.html">隐私政策</a>
+                <a href="https://7planner.qzz.io/marketing.html" data-i18n="privacy-footer-back">返回首页</a> | 
+                <a href="https://7planner.qzz.io/index.html" data-i18n="footer-privacy">隐私政策</a>
             </p>
         </div>
     </div>
 
     <!-- 统一页脚 -->
     <footer>
-        <p>&copy; 2025 <span class="brand-text"><img src="https://7planner.qzz.io/favicon.png" alt="全能助理" class="brand-icon" style="width: 20px; height: 20px;">全能助理</span>. All rights reserved.</p>
+        <p>&copy; 2025 <span class="brand-text"><img src="https://7planner.qzz.io/favicon.png" alt="7Planner" class="brand-icon" style="width: 20px; height: 20px;">7Planner</span>. <span data-i18n="footer-rights">All rights reserved.</span></p>
         <div style="margin-top: 20px;">
-            <a href="https://7planner.qzz.io/marketing.html">官方网站</a>
-            <a href="https://7planner.qzz.io/index.html">隐私政策</a>
-            <a href="https://7planner.qzz.io/support.html">支持中心</a>
-            <a href="mailto:admin@7planner.qzz.io">联系我们</a>
+            <a href="https://7planner.qzz.io/marketing.html" data-i18n="footer-official">官方网站</a>
+            <a href="https://7planner.qzz.io/index.html" data-i18n="footer-privacy">隐私政策</a>
+            <a href="https://7planner.qzz.io/support.html" data-i18n="footer-support">支持中心</a>
+            <a href="mailto:admin@7planner.qzz.io" data-i18n="footer-contact">联系我们</a>
         </div>
     </footer>
 </body>
