@@ -13,6 +13,7 @@
     <link rel="apple-touch-icon" sizes="512x512" href="https://7planner.qzz.io/icons/Icon-512.png">
     <link rel="icon" type="image/png" sizes="192x192" href="https://7planner.qzz.io/icons/Icon-192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="https://7planner.qzz.io/icons/Icon-512.png">
+    <script src="https://7planner.qzz.io/lang-switcher.js"></script>
     
     <!-- Theme Color -->
     <meta name="theme-color" content="#6750A4">
@@ -91,6 +92,20 @@
         .nav-links a.active {
             border-bottom: 2px solid white;
             padding-bottom: 2px;
+        }
+        .lang-switcher-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+        .lang-switcher-btn:hover {
+            background: rgba(255,255,255,0.3);
         }
         /* 头部区域 */
         header {
@@ -245,78 +260,84 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="https://7planner.qzz.io/marketing.html" class="nav-brand">
-                <img src="https://7planner.qzz.io/favicon.png" alt="全能助理" class="brand-icon">
-                全能助理
+                <img src="https://7planner.qzz.io/favicon.png" alt="7Planner" class="brand-icon">
+                <span data-i18n="nav-brand">全能助理</span>
             </a>
             <ul class="nav-links">
-                <li><a href="https://7planner.qzz.io/marketing.html" class="active">首页</a></li>
-                <li><a href="https://7planner.qzz.io/support.html">支持中心</a></li>
-                <li><a href="https://7planner.qzz.io/index.html">隐私政策</a></li>
+                <li><a href="https://7planner.qzz.io/marketing.html" class="active" data-i18n="nav-home">首页</a></li>
+                <li><a href="https://7planner.qzz.io/support.html" data-i18n="nav-support">支持中心</a></li>
+                <li><a href="https://7planner.qzz.io/index.html" data-i18n="nav-privacy">隐私政策</a></li>
+                <li><button class="lang-switcher-btn" onclick="window.langSwitcher.toggleLanguage()">
+                    <span id="current-lang">中文</span>
+                </button></li>
             </ul>
         </div>
     </nav>
 
     <header>
         <h1 class="brand-text">
-            <img src="https://7planner.qzz.io/icons/Icon-192.png" alt="全能助理" class="brand-icon" style="width: 48px; height: 48px;">
-            全能助理
+            <img src="https://7planner.qzz.io/icons/Icon-192.png" alt="7Planner" class="brand-icon" style="width: 48px; height: 48px;">
+            <span data-i18n="marketing-title">全能助理</span>
         </h1>
-        <p>使命 · 角色 · 目标 · 任务管理应用</p>
-        <p class="subtitle">让生活更有序，让目标更清晰</p>
+        <p data-i18n="marketing-subtitle">使命 · 角色 · 目标 · 任务管理应用</p>
+        <p class="subtitle" data-i18n="marketing-tagline">让生活更有序，让目标更清晰 | 现已全球发布 🌍 | 支持中文和英文</p>
     </header>
 
     <div class="container">
         <section class="features">
             <div class="feature-card">
-                <h3>🎯 角色管理</h3>
-                <p>定义和管理您生活中的各个角色（家庭、工作、个人发展等），实现生活角色的平衡管理。</p>
+                <h3 data-i18n="marketing-feature1-title">🎯 角色管理</h3>
+                <p data-i18n="marketing-feature1-desc">定义和管理您生活中的各个角色（家庭、工作、个人发展等），实现生活角色的平衡管理。</p>
             </div>
             <div class="feature-card">
-                <h3>📋 智能任务规划</h3>
-                <p>创建和管理任务，支持日度、周度、月度、季度和年度任务规划，满足不同场景需求。</p>
+                <h3 data-i18n="marketing-feature2-title">📋 智能任务规划</h3>
+                <p data-i18n="marketing-feature2-desc">创建和管理任务，支持日度、周度、月度、季度和年度任务规划，满足不同场景需求。</p>
             </div>
             <div class="feature-card">
-                <h3>⏰ 智能提醒系统</h3>
-                <p>多层次的提醒系统，包括每日提醒、精确时间提醒和提前提醒，确保重要任务不遗漏。</p>
+                <h3 data-i18n="marketing-feature3-title">⏰ 智能提醒系统</h3>
+                <p data-i18n="marketing-feature3-desc">多层次的提醒系统，包括每日提醒、精确时间提醒和提前提醒，确保重要任务不遗漏。</p>
             </div>
             <div class="feature-card">
-                <h3>📊 可视化规划</h3>
-                <p>提供年度、季度、月度和周度视图，直观展示您的任务安排和完成情况。</p>
+                <h3 data-i18n="marketing-feature4-title">📊 可视化规划</h3>
+                <p data-i18n="marketing-feature4-desc">提供年度、季度、月度和周度视图，直观展示您的任务安排和完成情况。</p>
             </div>
             <div class="feature-card">
-                <h3>🔐 安全隐私</h3>
-                <p>完全离线存储，数据安全保存在您的设备本地，支持生物识别和Apple Sign-In安全登录。</p>
+                <h3 data-i18n="marketing-feature5-title">🔐 安全隐私</h3>
+                <p data-i18n="marketing-feature5-desc">完全离线存储，数据安全保存在您的设备本地，支持生物识别和Apple Sign-In安全登录。</p>
             </div>
             <div class="feature-card">
-                <h3>👥 多用户支持</h3>
-                <p>支持多用户管理，每个用户可以独立管理自己的任务和角色，适合家庭共享使用。</p>
+                <h3 data-i18n="marketing-feature6-title">👥 多用户支持</h3>
+                <p data-i18n="marketing-feature6-desc">支持多用户管理，每个用户可以独立管理自己的任务和角色，适合家庭共享使用。</p>
             </div>
         </section>
 
         <section class="cta">
-            <h2>开始使用 全能助理</h2>
-            <p>在 App Store 免费下载并开始规划您的生活</p>
+            <h2 data-i18n="marketing-cta-title">开始使用 全能助理</h2>
+            <p data-i18n="marketing-cta-desc">在 App Store 免费下载并开始规划您的生活</p>
+            <p style="margin-top: 10px; font-size: 16px; color: #666;" data-i18n="marketing-cta-global">🌍 现已支持全球发布，包括中国和所有其他国家</p>
+            <p style="margin-top: 10px; font-size: 16px; color: #666;" data-i18n="marketing-cta-bilingual">🌐 完整双语支持：中文（简体）和 English</p>
+            <p style="margin-top: 10px; font-size: 14px; color: #999;" data-i18n="marketing-cta-version">版本 1.0.5+11 - 国际发布版</p>
             <div class="cta-buttons">
                 <a href="https://apps.apple.com/app/id6754278374" class="btn btn-appstore" target="_blank" rel="noopener noreferrer">
                     <span style="font-size: 24px; margin-right: 8px;">📱</span>
-                    在 App Store 下载
+                    <span data-i18n="marketing-cta-download">在 App Store 下载</span>
                 </a>
             </div>
             <div class="cta-buttons" style="margin-top: 20px;">
-                <a href="https://7planner.qzz.io/support.html" class="btn">获取支持</a>
-                <a href="https://7planner.qzz.io/index.html" class="btn">隐私政策</a>
+                <a href="https://7planner.qzz.io/support.html" class="btn" data-i18n="marketing-cta-support">获取支持</a>
+                <a href="https://7planner.qzz.io/index.html" class="btn" data-i18n="marketing-cta-privacy">隐私政策</a>
             </div>
         </section>
     </div>
 
     <!-- 统一页脚 -->
     <footer>
-        <p>&copy; 2025 <span class="brand-text"><img src="https://7planner.qzz.io/favicon.png" alt="全能助理" class="brand-icon" style="width: 20px; height: 20px;">全能助理</span>. All rights reserved.</p>
+        <p>&copy; 2025 <span class="brand-text"><img src="https://7planner.qzz.io/favicon.png" alt="7Planner" class="brand-icon" style="width: 20px; height: 20px;">7Planner</span>. <span data-i18n="footer-rights">All rights reserved.</span></p>
         <div style="margin-top: 20px;">
-            <a href="https://7planner.qzz.io/marketing.html">官方网站</a>
-            <a href="https://7planner.qzz.io/index.html">隐私政策</a>
-            <a href="https://7planner.qzz.io/support.html">支持中心</a>
-            <a href="mailto:admin@7planner.qzz.io">联系我们</a>
+            <a href="https://7planner.qzz.io/marketing.html" data-i18n="footer-official">官方网站</a>
+            <a href="https://7planner.qzz.io/index.html" data-i18n="footer-privacy">隐私政策</a>
+            <a href="https://7planner.qzz.io/support.html" data-i18n="footer-support">支持中心</a>
+            <a href="mailto:admin@7planner.qzz.io" data-i18n="footer-contact">联系我们</a>
         </div>
     </footer>
 </body>
